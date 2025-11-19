@@ -256,10 +256,13 @@ def SolutionTreeToPrint(SyntenyTree, x, positionGainLoss):
     for nodeZipper in depth(SyntenyTree):
         
         if nodeZipper.is_leaf():
-            content = nodeZipper.node.data["name"] + " : " + content_To_String(x[nodeZipper])
+            content = Map({"name":nodeZipper.node.data["name"], "content":content_To_String(x[nodeZipper])})
             solutionTree[nodeZipper] = Node(content)
         else:
-            content = content_To_String(x[nodeZipper])
+            if nodeZipper.node.data != None:
+                content = Map({"name":nodeZipper.node.data["name"], "content":content_To_String(x[nodeZipper])})
+            else:
+                content = Map({"name": "", "content":content_To_String(x[nodeZipper])})
             solutionTree[nodeZipper] = combine_tree(content,solutionTree[nodeZipper.down(0)], solutionTree[nodeZipper.down(1)])
         
         if positionGainLoss[nodeZipper][1]:
@@ -267,13 +270,13 @@ def SolutionTreeToPrint(SyntenyTree, x, positionGainLoss):
             if not nodeZipper.is_root():
                 contentUp = x[nodeZipper.up()]
             gain = x[nodeZipper] - contentUp
-            content = "Gain : " + content_To_String(gain)
+            content = Map({"name":  "Gain","content": content_To_String(gain)})
             solutionTree[nodeZipper] = Node(content).add(solutionTree[nodeZipper])                   
         
         if positionGainLoss[nodeZipper][0]:
             loss = x[nodeZipper.up()] - x[nodeZipper]
-            content = "Loss : " +  content_To_String(loss)
-            solutionTree[nodeZipper] = Node(content).add(solutionTree[nodeZipper])   
+            content = Map({"name":"Loss", "content": content_To_String(loss)})
+            solutionTree[nodeZipper] = Node(content).add(solutionTree[nodeZipper])    
     
     return solutionTree[Zipper(SyntenyTree)]
 
@@ -283,12 +286,13 @@ def SolutionTreeToWrite(SyntenyTree, x, positionGainLoss):
     for nodeZipper in depth(SyntenyTree):
         
         if nodeZipper.is_leaf():
-            content = nodeZipper.node.data["name"] +   " : " + content_To_String(x[nodeZipper])
-            content = Map({"name":content})
+            content = Map({"name":nodeZipper.node.data["name"], "content":content_To_String(x[nodeZipper])})
             solutionTree[nodeZipper] = Node(content)
         else:
-            content = content_To_String(x[nodeZipper])
-            content = Map({"name":content})
+            if nodeZipper.node.data != None:
+                content = Map({"name":nodeZipper.node.data["name"], "content":content_To_String(x[nodeZipper])})
+            else:
+                content = Map({"name": "", "content":content_To_String(x[nodeZipper])})
             solutionTree[nodeZipper] = combine_tree(content,solutionTree[nodeZipper.down(0)], solutionTree[nodeZipper.down(1)])
         
         if positionGainLoss[nodeZipper][1]:
@@ -296,14 +300,12 @@ def SolutionTreeToWrite(SyntenyTree, x, positionGainLoss):
             if not nodeZipper.is_root():
                 contentUp = x[nodeZipper.up()]
             gain = x[nodeZipper] - contentUp
-            content = "Gain : " + content_To_String(gain)
-            content = Map({"name":content})
+            content = Map({"name":  "Gain","content": content_To_String(gain)})
             solutionTree[nodeZipper] = Node(content).add(solutionTree[nodeZipper])                   
         
         if positionGainLoss[nodeZipper][0]:
             loss = x[nodeZipper.up()] - x[nodeZipper]
-            content = "Loss : " +  content_To_String(loss)
-            content = Map({"name":content})
+            content = Map({"name":"Loss", "content": content_To_String(loss)})
             solutionTree[nodeZipper] = Node(content).add(solutionTree[nodeZipper])   
     
     return write(solutionTree[Zipper(SyntenyTree)])
