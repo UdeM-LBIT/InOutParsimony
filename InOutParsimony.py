@@ -281,6 +281,7 @@ def SolutionTree(SyntenyTree, x, positionGainLoss):
     return solutionTree[Zipper(SyntenyTree)]
 
 #To write solution in newick format
-def SolutionTreeWrite(SyntenyTree, x, positionGainLoss): 
+def SolutionTreeNewick(SyntenyTree, x, positionGainLoss): 
     return write(SolutionTree(SyntenyTree, x, positionGainLoss)[Zipper(SyntenyTree)])
+
 
