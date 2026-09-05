@@ -1,0 +1,19 @@
+(
+  (
+    (
+      (
+        1[&contents='{"b"}'],
+        2[&contents='{"b","c"}']
+      )A,
+      3[&contents='{"b","c","e"}']
+    )B,
+    4[&contents='{"a","c"}']
+  )C,
+  (
+    5[&contents='{"a","b","d"}'],
+    (
+      6[&contents='{"b","d","f"}'],
+      7[&contents='{"b","d","f","g"}']
+    )D
+  )E
+)F;
