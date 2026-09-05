@@ -1,4 +1,3 @@
-
 from padapto.structure.grammar import clause, grammar, predicate
 from padapto.structure.pattern import (
     Empty,

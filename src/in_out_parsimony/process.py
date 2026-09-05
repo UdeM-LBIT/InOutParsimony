@@ -206,3 +206,29 @@ def resolve_solution(sol, lca_min: IndexedTree[LcaMin, None]) -> Node[Synteny, N
     """
     contents = _resolve_contents(sol, lca_min)
     return _resolve_events(sol, lca_min, contents)
+
+
+def solution_cost(sol, loss, gain) -> float:
+    """
+    Compute the cost of a solution under a given cost model.
+
+    :param sol: solution tree obtained from the grammar
+    :param loss: loss cost function
+    :param gain: gain cost function
+    """
+
+    def compute_cost(cursor):
+        operator = cursor.node.data.operator
+        info = cursor.node.data.args[0]
+        value = sum(child.node.data for child in cursor.children())
+
+        match operator:
+            case "loss":
+                value += loss(info)
+
+            case "gain":
+                value += gain(info)
+
+        return cursor.replace(node=Node(data=value))
+
+    return traversal.fold(compute_cost, traversal.depth(sol, preorder=False)).data
