@@ -14,14 +14,14 @@ All nodes, including all leaves and all internal nodes, must have unique names s
 The content of leaf nodes must be specified using the NHX `contents` attribute as shown in the example below.
 
 <table>
-    <tr>
-        <th>File <tt>data/example-rcg-7f.json</tt></th>
-        <th>Corresponding tree</th>
-    </tr>
-    <tr>
-        <td>
+<tr>
+<th>File <tt>data/example-rcg-7f.json</tt></th>
+<th>Corresponding tree</th>
+</tr>
+<tr>
+<td>
     
-```json
+```nhx
 (
   (
     (
@@ -43,13 +43,11 @@ The content of leaf nodes must be specified using the NHX `contents` attribute a
 )F;
 ```
 
-      </td>
-      <td>
-
-![](images/example-rcg-7f.svg)
-
-      </td>
-    </tr>
+</td>
+<td>
+<img src="images/example-rcg-7f.svg" alt="Rendering of the example tree on the left" width="500">
+</td>
+</tr>
 </table>
 
 Other examples are available in the `data/` folder.
