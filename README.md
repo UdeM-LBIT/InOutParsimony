@@ -1,4 +1,61 @@
 # InOutParsimony
-Implementation of the InOutParsimony algorithm for solving the Small Gain-Loss Phylogeny problem
 
-The Jupyter Notebook InOutParsimony.ipynb allows to use the InOutParsimony algorithm to solve the Small Gain-Loss Phylogeny problem. The program takes as input a synteny tree (in newick format), a dictionnary mapping each synteny to a synteny content and costs for gain and loss events. The program outputs a most parsimonious history as a fully labeled tree in Newick format in which gain and loss events are represented as unary node. Each node is labeled by its Name (either the name of the node given in input or Gain/Loss for unary nodes) and its Content (the synteny content at the node for binary nodes and leaves and the content that is gain/loss for gain/loss event).
+Implementation of the InOutParsimony algorithm for solving the Small Gain-Loss Phylogeny problem.
+
+## Command-line interface
+
+This `in_out_parsimony` Python package provides a command-line program to run the algorithm named `inoutpars`.
+After installing the package, use `inoutpars --help` for instructions.
+
+## Input format
+
+The `inoutpars` program reads its input tree in the NHX format.
+All nodes, including all leaves and all internal nodes, must have unique names so that they can be referenced when printing solutions.
+The content of leaf nodes must be specified using the NHX `contents` attribute as shown in the example below.
+
+<table>
+    <tr>
+        <th>File <tt>data/example-rcg-7f.json</tt></th>
+        <th>Corresponding tree</th>
+    </tr>
+    <tr>
+        <td>
+    
+```json
+(
+  (
+    (
+      (
+        1[&contents='{"b"}'],
+        2[&contents='{"b","c"}']
+      )A,
+      3[&contents='{"b","c","e"}']
+    )B,
+    4[&contents='{"a","c"}']
+  )C,
+  (
+    5[&contents='{"a","b","d"}'],
+    (
+      6[&contents='{"b","d","f"}'],
+      7[&contents='{"b","d","f","g"}']
+    )D
+  )E
+)F;
+```
+
+      </td>
+      <td>
+
+![](images/example-rcg-7f.svg)
+
+      </td>
+    </tr>
+</table>
+
+Other examples are available in the `data/` folder.
+
+## Citation
+
+The following paper describes the algorithm implemented in this package.
+
+> M. Gascon, M. Delabre, and N. El-Mabrouk, _“Gene repertoire evolution minimizing episodes of gains and losses,”_ in Comparative Genomics, M. Lafond, Ed., Cham: Springer Nature Switzerland, 2026, pp. 180–210. doi: [10.1007/978-3-032-26891-4_10](https://doi.org/10.1007/978-3-032-26891-4_10).
