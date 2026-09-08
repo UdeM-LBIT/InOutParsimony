@@ -252,6 +252,14 @@ def parse_args():
         help="non-negative cost for each gain event in the solution (default: 1)",
     )
     sols_parser.add_argument(
+        "--gain-ext",
+        "-E",
+        type=float,
+        metavar="COST",
+        default=0,
+        help="non-negative cost for each gained gene in the solution (default: 0)",
+    )
+    sols_parser.add_argument(
         "--loss-open",
         "-L",
         type=float,
@@ -261,7 +269,7 @@ def parse_args():
     )
     sols_parser.add_argument(
         "--loss-ext",
-        "-E",
+        "-F",
         type=float,
         metavar="COST",
         default=0,
@@ -349,7 +357,11 @@ def main():
                 if event.size > 0
                 else 0
             ),
-            "gain": lambda event: options.gain_open if event.size > 0 else 0,
+            "gain": lambda event: (
+                (options.gain_open + options.gain_ext * event.size)
+                if event.size > 0
+                else 0
+            ),
         }
 
         if options.solutions == "show":
