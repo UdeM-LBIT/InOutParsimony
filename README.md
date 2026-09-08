@@ -15,7 +15,7 @@ The content of leaf nodes must be specified using the NHX `contents` attribute a
 
 <table>
 <tr>
-<th>File <tt>data/example-rcg-7f.json</tt></th>
+<th>File <tt>data/example-rcg-7f.nhx</tt></th>
 <th>Corresponding tree</th>
 </tr>
 <tr>
