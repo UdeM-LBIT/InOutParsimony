@@ -1,0 +1,31 @@
+(
+  (
+    (
+      (
+        (
+          (
+            (
+              29760[&label=Vitis_vinifera],
+              3702[&label=Arabidopsis_thaliana]
+            )I1,
+            (
+              39947[&label='Oryza sativa (Japonica Group)'],
+              4558[&label=Sorghum_bicolor]
+            )I2
+          )I3,
+          88036[&label=Selaginella_moellendorffii]
+        )I4,
+        3218[&label=Physcomitrella_patens]
+      )I5,
+      (
+        (
+          296587[&label='Micromonas sp. (RCC299)'],
+          70448[&label=Ostreococcus_tauri]
+        )I6,
+        3055[&label=Chlamydomonas_reinhardtii]
+      )I7
+    )I8,
+    45157[&label=Cyanidioschyzon_merolae]
+  )I9,
+  2762[&label=Cyanophora_paradoxa]
+)I10;

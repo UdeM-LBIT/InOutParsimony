@@ -1,0 +1,31 @@
+(
+  (
+    (
+      (
+        (
+          (
+            (
+              29760[&contents='{"MitoCOG0139", "MitoCOG0066", "MitoCOG0053", "MitoCOG0080", "MitoCOG0126", "MitoCOG0136", "MitoCOG0052", "MitoCOG0027", "MitoCOG0029", "MitoCOG0060", "MitoCOG0026", "MitoCOG0134", "MitoCOG0127", "MitoCOG0071", "MitoCOG0138", "MitoCOG0135", "MitoCOG0070", "MitoCOG0048", "MitoCOG0133", "MitoCOG0054"}',label=Vitis_vinifera],
+              3702[&contents='{"MitoCOG0139", "MitoCOG0092", "MitoCOG0066", "MitoCOG0059", "MitoCOG0053", "MitoCOG0130", "MitoCOG0080", "MitoCOG0067", "MitoCOG0136", "MitoCOG0072", "MitoCOG0014", "MitoCOG0052", "MitoCOG0027", "MitoCOG0029", "MitoCOG0060", "MitoCOG0026", "MitoCOG0134", "MitoCOG0075", "MitoCOG0127", "MitoCOG0055", "MitoCOG0071", "MitoCOG0064", "MitoCOG0138", "MitoCOG0135", "MitoCOG0048", "MitoCOG0051", "MitoCOG0005", "MitoCOG0133", "MitoCOG0061", "MitoCOG0054"}',label=Arabidopsis_thaliana]
+            )I1,
+            (
+              39947[&contents='{"MitoCOG0139", "MitoCOG0092", "MitoCOG0066", "MitoCOG0053", "MitoCOG0039", "MitoCOG0126", "MitoCOG0136", "MitoCOG0072", "MitoCOG0052", "MitoCOG0029", "MitoCOG0060", "MitoCOG0134", "MitoCOG0075", "MitoCOG0127", "MitoCOG0071", "MitoCOG0138", "MitoCOG0135", "MitoCOG0070", "MitoCOG0048", "MitoCOG0051", "MitoCOG0133", "MitoCOG0054"}',label='Oryza sativa (Japonica Group)'],
+              4558[&contents='{"MitoCOG0139", "MitoCOG0092", "MitoCOG0066", "MitoCOG0053", "MitoCOG0126", "MitoCOG0136", "MitoCOG0072", "MitoCOG0052", "MitoCOG0027", "MitoCOG0029", "MitoCOG0060", "MitoCOG0075", "MitoCOG0127", "MitoCOG0138", "MitoCOG0135", "MitoCOG0070", "MitoCOG0048", "MitoCOG0051", "MitoCOG0133"}',label=Sorghum_bicolor]
+            )I2
+          )I3,
+          88036[&contents='{"MitoCOG0066", "MitoCOG0039", "MitoCOG0126", "MitoCOG0136", "MitoCOG0072", "MitoCOG0052", "MitoCOG0027", "MitoCOG0029", "MitoCOG0060", "MitoCOG0026", "MitoCOG0127", "MitoCOG0055", "MitoCOG0071", "MitoCOG0064", "MitoCOG0070", "MitoCOG0048", "MitoCOG0005", "MitoCOG0133", "MitoCOG0061", "MitoCOG0054"}',label=Selaginella_moellendorffii]
+        )I4,
+        3218[&contents='set()',label=Physcomitrella_patens]
+      )I5,
+      (
+        (
+          296587[&contents={"MitoCOG0066"},label='Micromonas sp. (RCC299)'],
+          70448[&contents='{"MitoCOG0139", "MitoCOG0027", "MitoCOG0060", "MitoCOG0130", "MitoCOG0003", "MitoCOG0137", "MitoCOG0126", "MitoCOG0075", "MitoCOG0127", "MitoCOG0066", "MitoCOG0052"}',label=Ostreococcus_tauri]
+        )I6,
+        3055[&contents='{"MitoCOG0139", "MitoCOG0066", "MitoCOG0059", "MitoCOG0076", "MitoCOG0039", "MitoCOG0130", "MitoCOG0126", "MitoCOG0136", "MitoCOG0014", "MitoCOG0052", "MitoCOG0027", "MitoCOG0029", "MitoCOG0060", "MitoCOG0043", "MitoCOG0004", "MitoCOG0075", "MitoCOG0055", "MitoCOG0031", "MitoCOG0064", "MitoCOG0070", "MitoCOG0003", "MitoCOG0048", "MitoCOG0006", "MitoCOG0005", "MitoCOG0133", "MitoCOG0007", "MitoCOG0061", "MitoCOG0054"}',label=Chlamydomonas_reinhardtii]
+      )I7
+    )I8,
+    45157[&contents='{"MitoCOG0139", "MitoCOG0027", "MitoCOG0029", "MitoCOG0060", "MitoCOG0130", "MitoCOG0137", "MitoCOG0043", "MitoCOG0080", "MitoCOG0126", "MitoCOG0127", "MitoCOG0136", "MitoCOG0066", "MitoCOG0133", "MitoCOG0031", "MitoCOG0061"}',label=Cyanidioschyzon_merolae]
+  )I9,
+  2762[&contents='{"MitoCOG0139", "MitoCOG0070", "MitoCOG0029", "MitoCOG0130", "MitoCOG0137", "MitoCOG0080", "MitoCOG0127", "MitoCOG0136", "MitoCOG0066", "MitoCOG0133", "MitoCOG0052", "MitoCOG0071"}',label=Cyanophora_paradoxa]
+)I10;
