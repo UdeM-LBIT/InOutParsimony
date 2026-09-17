@@ -17,6 +17,9 @@ class LcaMin:
     # Minimum set of genes that must be present in the node
     min: Set[str] = frozenset()
 
+    # Minimum set of genes that must be lost relative to the parent node
+    min_loss: Set[str] = frozenset()
+
     # Set of genes for which this node is the lowest common ancestor
     lca: Set[str] = frozenset()
 
@@ -57,6 +60,8 @@ def compute_lca_min(node: Node[Synteny, None]) -> IndexedTree[LcaMin, None]:
 
     lca = {}
     min_contents = {}
+    min_loss = {}
+    min_loss[node.data.name] = frozenset()
 
     for cursor in traversal.depth(node, preorder=False):
         data = cursor.node.data
@@ -68,10 +73,15 @@ def compute_lca_min(node: Node[Synteny, None]) -> IndexedTree[LcaMin, None]:
         if cursor.is_leaf():
             min_contents[data.name] = data.contents
         else:
-            min_contents[data.name] = _union(
+            min_contents_at = _union(
                 min_contents[child.node.data.name] - lca[child.node.data.name]
                 for child in cursor.children()
             )
+            min_contents[data.name] = min_contents_at
+
+            for child in cursor.children():
+                child_name = child.node.data.name
+                min_loss[child_name] = min_contents_at - min_contents[child_name]
 
     out_node = traversal.map(
         lambda assoc: LcaMin(
@@ -79,6 +89,7 @@ def compute_lca_min(node: Node[Synteny, None]) -> IndexedTree[LcaMin, None]:
             lca=lca_below[assoc.name],
             lca_below=lca_below[assoc.name],
             min=min_contents[assoc.name],
+            min_loss=min_loss[assoc.name]
         ),
         traversal.depth(node),
     )

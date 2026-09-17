@@ -61,12 +61,12 @@ class InOutParsimonyGrammar:
                 self.branch(
                     tree=left,
                     gains=gains_left,
-                    out=out + in_right + len(data.min - left.node.data.min),
+                    out=out + in_right + len(left.node.data.min_loss),
                 ),
                 self.branch(
                     tree=right,
                     gains=gains_right,
-                    out=out + in_left + len(data.min - right.node.data.min),
+                    out=out + in_left + len(right.node.data.min_loss),
                 ),
             )
         else:
